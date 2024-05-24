@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Whiskers Emporium</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #99cd09;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header img {
+            max-height: 100px;
+            margin-right: 1rem;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .home-button {
+    margin: 10px; 
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2rem;
+        }
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem;
+            text-align: center;
+            flex: 1 1 calc(33.333% - 2rem);
+            box-sizing: border-box;
+        }
+        .product img {
+            max-width: 50%;
+            height: auto;
+        }
+        .product h2 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        .product p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+        .product button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .product button:hover {
+            background-color: #218838;
+        }
+        .cart {
+            background-color: #333;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem 0;
+            clear: both;
+        }
+        .cart h2 {
+            margin-bottom: 1rem;
+            color:#fff
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color:#fff
+        }
+        .checkout-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-top: 1rem;
+        }
+        .checkout-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <a href="home_page.html" class="home-button">Home</a>
+        <a href="about_us.html" class="home-button">About us</a>
+        <a href="contact_us.html" class="home-button">Contact us</a>
+        <img src="logo.gif" alt="Logo">
+        <h1>Paws & Whiskers Emporium</h1>
+    </div>
+    <div class="container">
+       
+        <div class="product">
+            <img src="dfood1.jpg" alt="Product 1">
+            <h2>Go! Solutions Digestion + Gut Health Salmon Recipe With Ancient Grains Dog Dry Food</h2>
+            <p>PHP 1,300.00</p>
+            <button onclick="addToCart('Go! Solutions Weight Management + Joint Care Grain-Free Chicken Recipe Dog Dry Food', 1300.00)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="dfood2.jpg" alt="Product 2">
+            <h2>Go! Solutions Weight Management + Joint Care Grain-Free Chicken Recipe Dog Dry Food</h2>
+            <p>PHP 3,530.00</p>
+            <button onclick="addToCart('Go! Solutions Weight Management + Joint Care Grain-Free Chicken Recipe Dog Dry Food', 3530.00)">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="dfood3.jpg" alt="Product 3">
+            <h2>Summit Coastal Grill Chicken Meal + Salmon Meal 11.34kg Dog Dry Food</h2>
+            <p>PHP 2,565.00</p>
+            <button onclick="addToCart('Summit Coastal Grill Chicken Meal + Salmon Meal 11.34kg Dog Dry Food', 2565.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dfood4.jpg" alt="Product 4">
+            <h2>Summit Farmstead Feast Pork Meal + Lamb Meal 11.34kg Dog Dry Food</h2>
+            <p>PHP 2,565.00</p>
+            <button onclick="addToCart('Summit Farmstead Feast Pork Meal + Lamb Meal 11.34kg Dog Dry Food', 2565.00)">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="dfood5.jpg" alt="Product 5">
+            <h2>Brit Care Mono Protein Adult Medium Breed Lamb Hypoallergenic Dog Dry Food</h2>
+            <p>PHP 3,145.00</p>
+            <button onclick="addToCart('Brit Care Mono Protein Adult Medium Breed Lamb Hypoallergenic Dog Dry Food', 3145.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="cfood1.jpg" alt="Product 6">
+            <h2>Orijen Original Cat Dry Food</h2>
+            <p>PHP 1,605.00</p>
+            <button onclick="addToCart('Orijen Original Cat Dry Food', 1605.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="cfood2.jpg" alt="Product 7">
+            <h2>Royal Canin Feline Health Nutrition Sterilised Kitten Dry Food</h2>
+            <p>PHP 1,315.00</p>
+            <button onclick="addToCart('Royal Canin Feline Health Nutrition Sterilised Kitten Dry Food', 1315.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="cfood3.jpg" alt="Product 8">
+            <h2>Royal Canin Feline Health Nutrition Sterilised 37 Cat Dry Food</h2>
+            <p>PHP 2,325.00</p>
+            <button onclick="addToCart('Royal Canin Feline Health Nutrition Sterilised Kitten Dry Food', 2325.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="cfood4.jpg" alt="Product 9">
+            <h2>Royal Canin Feline Health Nutrition Ageing 12+ Cat Dry Food</h2>
+            <p>PHP 1,190.00</p>
+            <button onclick="addToCart('Royal Canin Feline Health Nutrition Ageing 12+ Cat Dry Food', 1190.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="cfood5.jpg" alt="Product 10">
+            <h2>Royal Canin Feline Health Nutrition Aroma Exigent Cat Dry Food</h2>
+            <p>PHP 2,960.00</p>
+            <button onclick="addToCart('Royal Canin Feline Health Nutrition Aroma Exigent Cat Dry Food', 2960.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dsupply1.jpg" alt="Product 11">
+            <h2>Zee.Bed Black Pet Air Bed</h2>
+            <p>PHP 7,500.00</p>
+            <button onclick="addToCart('Zee.Bed Black Pet Air Bed', 7500.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dsupply2.jpg" alt="Product 12">
+            <h2>Zee.Dog Slip-N-Lock Gotham Dog Leash</h2>
+            <p>PHP 995.00</p>
+            <button onclick="addToCart('Zee.Dog Slip-N-Lock Gotham Dog Leash', 995.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dsupply3.jpg" alt="Product 13">
+            <h2>Zee.Dog Rings Sage Tuff Dog Bowl</h2>
+            <p>PHP 1,995.00</p>
+            <button onclick="addToCart('Zee.Dog Rings Sage Tuff Dog Bowl', 1995.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dtoy1.jpg" alt="Product 14">
+            <h2>Petstages Flip & Chew Brown Dog Toy</h2>
+            <p>PHP 495.00</p>
+            <button onclick="addToCart('Petstages Flip & Chew Brown Dog Toy', 495.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dtoy2.jpg" alt="Product 15">
+            <h2>Zee.Dog Mr. Fresco Dog Toy</h2>
+            <p>PHP 795.00</p>
+            <button onclick="addToCart('Zee.Dog Mr. Fresco Dog Toy', 795.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="csupply1.jpg" alt="Product 16">
+            <h2>DISCOUNTED Dr. Floof All-in-One with Lavender 200ml Cat Shampoo</h2>
+            <p>PHP 166.50</p>
+            <button onclick="addToCart('DISCOUNTED Dr. Floof All-in-One with Lavender 200ml Cat Shampoo', 166.50)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="csupply2.jpg" alt="Product 17">
+            <h2>Dog H2o & Cat H2o Dental Care Attachment for Water Fountain</h2>
+            <p>PHP 310.00</p>
+            <button onclick="addToCart('Dog H2o & Cat H2o Dental Care Attachment for Water Fountain', 310.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="csupply3.jpg" alt="Product 18">
+            <h2>Zee.Cat Terracotta Cat Carrier</h2>
+            <p>PHP 3,495.00</p>
+            <button onclick="addToCart('Zee.Cat Terracotta Cat Carrier', 3495.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="csupply4.jpg" alt="Product 19">
+            <h2>Simple Pets Ponkan Clumping Cat Litter 10L 8kg</h2>
+            <p>PHP 295.00</p>
+            <button onclick="addToCart('Simple Pets Ponkan Clumping Cat Litter 10L 8kg', 295.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="ctoy1.jpg" alt="Product 20">
+            <h2>Petstages Hunt N Swat Treat Tumbler Cat Toy</h2>
+            <p>PHP 445.00</p>
+            <button onclick="addToCart('Petstages Hunt N Swat Treat Tumbler Cat Toy', 445.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dtreat1.jpg" alt="Product 21">
+            <h2>Serrano Sticks Lamb (Single Stick) 12g Soft Dog Treats</h2>
+            <p>PHP 20.00</p>
+            <button onclick="addToCart('Serrano Sticks Lamb Single Stick 12g Soft Dog Treats', 20.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dtreat2.jpg" alt="Product 22">
+            <h2>Serrano Sticks Salmon and Tuna (Single Stick) 12g Soft Dog Treats</h2>
+            <p>PHP 20.00</p>
+            <button onclick="addToCart('Serrano Sticks Salmon and Tuna Single Stick 12g Soft Dog Treats', 20.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dtreat3.jpg" alt="Product 23">
+            <h2>Serrano Sticks Duck Single Stick 12g Soft Dog Treats</h2>
+            <p>PHP 20.00</p>
+            <button onclick="addToCart('Serrano Sticks Duck Single Stick 12g Soft Dog Treats', 20.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dtreat4.jpg" alt="Product 24">
+            <h2>Harley's All-Natural Pawnut Butter for Pets 300mL</h2>
+            <p>PHP 320.00</p>
+            <button onclick="addToCart('Harleys All-Natural Pawnut Butter for Pets 300mL', 320.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dtreat5.jpg" alt="Product 25">
+            <h2>Harley's All-Natural Dehydrated Pork Heart 50g Pet Treats</h2>
+            <p>PHP 250.00</p>
+            <button onclick="addToCart('Harleys All-Natural Dehydrated Pork Heart 50g Pet Treats', 250.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="ctreat1.jpg" alt="Product 26">
+            <h2>Harley's All-Natural Dehydrated Salmon Skin Rolls 50g Pet Treats</h2>
+            <p>PHP 275.00</p>
+            <button onclick="addToCart('Harleys All-Natural Dehydrated Salmon Skin Rolls 50g Pet Treats', 275.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="ctreat2.jpg" alt="Product 27">
+            <h2>Harley's All-Natural Dehydrated White Anchovies 50g Pet Treats</h2>
+            <p>PHP 230.00</p>
+            <button onclick="addToCart('Harleys All-Natural Dehydrated White Anchovies 50g Pet Treats', 230.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="ctreat3.jpg" alt="Product 28">
+            <h2>Harley's All-Natural Dehydrated Sardines 50g Pet Treats</h2>
+            <p>PHP 250.00</p>
+            <button onclick="addToCart('Harleys All-Natural Dehydrated Sardines 50g Pet Treats', 250.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="ctreat4.jpg" alt="Product 29">
+            <h2>Moochie Mince with Salmon Weight Control Grain-Free 70g Cat Wet Food</h2>
+            <p>PHP 49.00</p>
+            <button onclick="addToCart('Moochie Mince with Salmon Weight Control Grain-Free 70g Cat Wet Food', 49.00)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="ctreat5.jpg" alt="Product 30">
+            <h2>Moochie Tuna with Chicken Healthy Growth for Kitten Grain-Free 70g Cat Wet Food</h2>
+            <p>PHP 49.00</p>
+            <button onclick="addToCart('Moochie Tuna with Chicken Healthy Growth for Kitten Grain-Free 70g Cat Wet Food', 49.00)">Add to Cart</button>
+        </div>
+
+
+
+        
+    </div>
+    <div class="cart" id="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+        <a href="cart_page.html"><button class="checkout-button">Checkout</button></a>
+    </div>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(product, price) {
+    cart.push({ product, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCart();
+    alert(product + ' has been added to your cart!');
+}
+
+function displayCart() {
+    const cartItemsDiv = document.getElementById('cart-items');
+    cartItemsDiv.innerHTML = '';
+    cart.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item');
+        itemDiv.innerText = `${item.product} - PHP${item.price.toFixed(2)}`;
+        cartItemsDiv.appendChild(itemDiv);
+    });
+}
+
+displayCart();
+    </script>
+</body>
+</html>
